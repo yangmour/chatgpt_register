@@ -107,27 +107,28 @@ _file_lock = threading.Lock()
 
 
 # Chrome 指纹配置: impersonate 与 sec-ch-ua 必须匹配真实浏览器
+# 注意：只使用 curl_cffi 支持的版本（当前仅 chrome131）
 _CHROME_PROFILES = [
     {
         "major": 131, "impersonate": "chrome131",
         "build": 6778, "patch_range": (69, 205),
         "sec_ch_ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
     },
-    {
-        "major": 133, "impersonate": "chrome133a",
-        "build": 6943, "patch_range": (33, 153),
-        "sec_ch_ua": '"Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"',
-    },
-    {
-        "major": 136, "impersonate": "chrome136",
-        "build": 7103, "patch_range": (48, 175),
-        "sec_ch_ua": '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
-    },
-    {
-        "major": 142, "impersonate": "chrome142",
-        "build": 7540, "patch_range": (30, 150),
-        "sec_ch_ua": '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
-    },
+    # {
+    #     "major": 133, "impersonate": "chrome133a",
+    #     "build": 6943, "patch_range": (33, 153),
+    #     "sec_ch_ua": '"Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"',
+    # },
+    # {
+    #     "major": 136, "impersonate": "chrome136",
+    #     "build": 7103, "patch_range": (48, 175),
+    #     "sec_ch_ua": '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+    # },
+    # {
+    #     "major": 142, "impersonate": "chrome142",
+    #     "build": 7540, "patch_range": (30, 150),
+    #     "sec_ch_ua": '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+    # },
 ]
 
 
